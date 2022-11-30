@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block body %}
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="overlay-image" style="background-image: url('images/main.jpg');"></div>
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Le meilleur raccourcisseur d'URL.&#x26A1; </h1>
+                            <p>Un raccourcisseur d'URL conçu avec des outils&#x1F4F2; puissants pour vous aider à développer et à protéger&#x1F415;&#x200D;&#x1F9BA; votre marque.</p>
+
+                            {% if is_granted('IS_ANONYMOUS') %}
+                                <p><a class="btn btn-lg btn-primary" href="#">Inscription: &#x1F64D;&#x200D;&#x2642;&#xFE0F;</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+  <div class="container marketing">
+
+
+    <div class="row">
+    
+      <div class="col-lg-4">
+        
+
+        <h2 class="fw-bold">Vous allez inspirer la confiance&#x1FA90; </h2>
+        <img loading="lazy" width="320" heignt="180"src="{{ asset('images/echange.png')}}"/>
+        <p class="text-start">Avec plus de clics&#x1F4BB;, la reconnaissance de la marque et la confiance des consommateurs&#x1F9B8; dans vos communications augmentent, ce qui à son tour inspire encore plus d'engagement avec vos liens&#x1F517;.</p></p>
+       
+      </div>
+
+      <div class="col-lg-4">
+        
+        <img loading="lazy" width="320" heignt="180"src="{{ asset('images/graph.png')}}"/>
+        
+        <h2 class="fw-bold">Boostez vos résultats&#x2747; </h2>
+        <p class="text-start">En plus d'une meilleure délivrabilité et d'un meilleur taux de clics&#x1F4BB;, des statistiques&#x2197; au niveau des liens&#x1F517; vous donnent un aperçu crucial de votre engagement afin que votre équipe puisse prendre des décisions plus judicieuses concernant son contenu et ses communications.<p>
+
+      </div>
+
+      <div class="col-lg-4">
+        <img loading="lazy" width="320" heignt="180"src="{{ asset('images/checkyou.png')}}"/>
+        <h2 class="fw-bold">Prenez le contrôle&#x1F9D8;&#x200D;&#x2642;&#xFE0F; </h2>
+        <p class="text-start">Prenez le crédit de votre contenu et apprenez-en plus sur la façon dont il est consommé en activant l'auto-branding, une fonctionnalité qui garantit que votre marque reste dans tout lien&#x1F517; raccourci par quelqu'un pointant vers votre site Web&#x2705;.</p>
+        
+      </div>
+       
+    </div>
+
+
+    <hr class="featurette-divider">
+
+  </div>
+
+  <section class="col col-lg-10 mx-auto mb-5">
+    <div class="card" id="shortenCard">
+        <div class="card-body bg-light">
+            <form id="shortenForm">
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" class="form-control-lg"name="url" id="url" placeholder="Ici votre adresse à réduire" autocomplite="off" required > 
+                        <button type="submit" class="btn btn-lg btn-success"  id="btnShortenUrl"> Réduire l'URL&#x1F90F;</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="container">
+     <p>&copy; Franck BOUTCHUENG .2022 &middot; <a href="#">Confidentialité&#x1F648;&#x1F649;&#x1F64A; </a> &middot; <a href="#">Conditions&#x1F50E;</a></p>
+  </footer>
+</main>
+{% endblock %}
+
+{% block javascript %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
