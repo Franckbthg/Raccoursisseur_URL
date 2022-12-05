@@ -6,7 +6,7 @@ const btnShortenUrl = document.querySelector('#btnShortenUrl');
 const URL_SHORTEN ='/ajax/shorten';
 const errorMessages = {
     'INVALID_ARG_URL': "Impossible de raccourcir ce lien. Ce n'est pas une URL  valide",
-    'MISSING_ARG_URL': "Veuillez fournir une URL valide",
+    'MISSING_ARG_URL': "Veuillez fournir une URL valide !",
 }
 
 form.addEventListener( 'submit', function ( e ) {
